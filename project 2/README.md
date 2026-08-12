@@ -268,7 +268,8 @@ MIT License — Free to use, modify, and distribute with attribution.
 
 <div align="center">
 
-### Your Name Here
+### Divyesh jadav
+
 
 [![GitHub](https://img.shields.io/badge/GitHub-yourhandle-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
@@ -281,21 +282,7 @@ MIT License — Free to use, modify, and distribute with attribution.
 
 </div>
 
----
 
-## 🙏 Acknowledgements
-
-Special thanks to the following resources that made this project possible:
-
-- 📚 [MySQL Official Docs](https://dev.mysql.com/doc/) — Official SQL reference
-- 🔗 [Mode SQL Tutorial — Joins](https://mode.com/sql-tutorial/) — In-depth join tutorials
-- 📐 [GeeksForGeeks — SQL Window Functions](https://www.geeksforgeeks.org/window-functions-in-sql/) — Window function examples
-- 🖥️ [W3Schools SQL](https://www.w3schools.com/sql/) — Beginner SQL reference
-- 💬 [Stack Overflow Community](https://stackoverflow.com/) — Problem-solving support
-
----
-
-<div align="center">
 
 ---
 
