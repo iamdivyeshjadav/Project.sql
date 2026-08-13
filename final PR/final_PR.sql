@@ -81,14 +81,38 @@ insert into enrollments (enrolmentID, studentID, courseID, enrolmentdate) values
 
 
 -- Q1. Perform CRUD Operations on all tables.
-insert into students (studentid, first_name, last_name, email, birth_date, enrolment_date) 
-values (6, 'Tirth', 'Donda', 'tirth.donga@email.com', '2001-03-12', '2023-08-01');
 
+-- departments tabal
+insert into departments (departmentID, department_name) values (6, 'civil');
+select * from departments;
+update departments set department_name = 'civil engineering' where departmentID = 6;
+delete from departments where departmentID = 6;
+
+-- students table
+insert into students (studentid, first_name, last_name, email, birth_date, enrolment_date)
+values (6, 'Tirth', 'Donda', 'tirth.donda@email.com', '2001-03-12', '2023-08-01');
 select * from students;
-
 update students set last_name = 'Donga' where studentid = 6;
-
 delete from students where studentID = 6;
+
+-- courses table  
+insert into courses (courseID, course_name, departmentID, credits) values (106, 'operating systems', 1, 4);
+select * from courses;
+update courses set credits = 3 where courseID = 106;
+delete from courses where courseID = 106;
+
+-- instructors tabal
+insert into instructors (instructorID, first_name, last_name, email, departmentID, salary)
+values (6, 'anjali', 'mehta', 'anjali.mehta@univ.com', 1, 80000.00);
+select * from instructors;
+update instructors set salary = 82000.00 where instructorID = 6;
+delete from instructors where instructorID = 6;
+
+-- enrollments table
+insert into enrollments (enrolmentID, studentID, courseID, enrolmentDate) values (6, 1, 103, '2021-08-06');
+select * from enrollments;
+update enrollments set enrolmentDate = '2021-08-07' where enrolmentID = 6;
+delete from enrollments where enrolmentID = 6;
 
 -- Q2. Retrieve students who enrolled after 2022.
 select * from students where enrolment_date > '2022-12-31';
@@ -96,8 +120,8 @@ select * from students where enrolment_date > '2022-12-31';
 -- Q3. Retrieve courses offered by the Mathematics department with a limit of 5 courses.
 select c.* from courses c join departments d on c.departmentID = d.departmentID where d.department_name = 'mathematics' limit 5;
 
--- Q4. Get the number of students enrolled in each course, filtering for courses with more than 5 students.
-select c.course_name, count(e.studentID) as student_count from enrollments e join courses c on e.courseid = c.courseid group by c.course_name, e.courseid having count(e.studentid) > 5;
+-- Q4. Get the number of students enrolled in each course, filtering for courses with more than 0 students.
+select c.course_name, count(e.studentID) as student_count from enrollments e join courses c on e.courseid = c.courseid group by c.course_name, e.courseid having count(e.studentid) > 0;
 
 -- Q5. Find students who are enrolled in both Introduction to SQL and Data Structures.
 select s.studentID, s.first_name, s.last_name from students s join enrollments e on s.studentID = e.studentID join courses c on e.courseid = c.courseid
@@ -115,7 +139,7 @@ select avg(credits) as average_credits from courses;
 select max(i.salary) max_salary from instructors i join departments d on i.departmentid = d.departmentid where d.department_name = 'computer science';
 
 -- Q9. Count the number of students enrolled in each department.
-select d.department_name, count(distinct e.studentid) as total_students from departments d join courses c on d.departmentid = c.departmentid join enrollments e on c.courseid = e.courseid
+select d.department_name, count(distinct e.studentid) as total_students from departments d left join courses c on d.departmentid = c.departmentid left join enrollments e on c.courseid = e.courseid
 group by d.department_name, d.departmentid;
 
 -- Q10. INNER JOIN: Retrieve students and their corresponding courses.
@@ -124,9 +148,9 @@ select s.first_name, s.last_name, c.course_name from students s inner join enrol
 -- Q11. LEFT JOIN: Retrieve all students and their corresponding courses, if any.
 select s.first_name, s.last_name, c.course_name from students s left join enrollments e on s.studentid = e.studentid left join courses c on e.courseid = c.courseid;
 
--- Q12. Subquery: Find students enrolled in courses that have more than 10 students.
+-- Q12. Subquery: Find students enrolled in courses that have more than 0 students.
 select distinct s.studentid, s.first_name, s.last_name from students s join enrollments e on s.studentid = e.studentid
-where e.courseid in (select courseid from enrollments group by courseid having count(studentid) > 10);
+where e.courseid in (select courseid from enrollments group by courseid having count(studentid) > 0);
 
 -- Q13. Extract the year from the EnrollmentDate of students.
 select studentid, first_name, last_name, year(enrolment_date) enrolment_year from students;
