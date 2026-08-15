@@ -692,15 +692,20 @@ The SQL queries provide several useful e-commerce insights:
 <div align="center">
 
 ## Jadav Divyesh
-</div>
-This project is intended for **educational and SQL practice purposes**.
+[![GitHub](https://img.shields.io/badge/GitHub-yourhandle-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 
-You may modify and extend the queries for learning, experimentation, and database practice.
+> *"Behind every transcript is a query waiting to be written."*
+
+**🎓 Role:** SQL Learner | Data Enthusiast \
+**📍 Location:** India\
+**🛠️ Skills:** SQL · Joins · Aggregates · Subqueries · Window Functions · Relational Design
+
+</div>
 
 ---
-
-<div align="center">
-
+---
 *Made with ❤️ and SQL — E-Commerce Management Database Project*
 
 </div>
+
